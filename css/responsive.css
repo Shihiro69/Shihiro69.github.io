@@ -78,7 +78,7 @@
   }
 
   /* ── Navigation Mobile ──────────────────────────────────────────────── */
-  .nav__menu {
+  .backpack {
     position: fixed;
     top: 0;
     right: -100%;
@@ -86,64 +86,39 @@
     max-width: 320px;
     height: 100vh;
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-6);
-    padding: var(--space-20) var(--space-8) var(--space-8);
+    align-items: stretch;
+    gap: var(--space-1);
+    padding: var(--space-20) var(--space-4) var(--space-8);
     background: var(--glass-bg);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
     border-left: 1px solid var(--glass-border);
     transition: right var(--transition-base);
     z-index: var(--z-overlay);
+    list-style: none;
+    margin: 0;
   }
 
-  .nav__menu--open {
+  .backpack--open {
     right: 0;
   }
 
-  .nav__link {
-    font-size: var(--text-lg);
+  .backpack__slot {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    gap: var(--space-3);
+    font-size: var(--text-base);
   }
 
-  /* ── Hamburger ────────────────────────────────────────────────────────── */
+  .backpack__icon {
+    width: 28px;
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  /* ── Hamburger visible on mobile ──────────────────────────────────────── */
   .hamburger {
     display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    z-index: var(--z-modal);
-    background: none;
-    border: none;
-    position: relative;
-  }
-
-  .hamburger__line {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: var(--clr-text-primary);
-    border-radius: var(--radius-full);
-    transition: all var(--transition-base);
-    position: absolute;
-  }
-
-  .hamburger__line:nth-child(1) { transform: translateY(-6px); }
-  .hamburger__line:nth-child(2) { transform: translateY(0); }
-  .hamburger__line:nth-child(3) { transform: translateY(6px); }
-
-  .hamburger--active .hamburger__line:nth-child(1) {
-    transform: translateY(0) rotate(45deg);
-  }
-
-  .hamburger--active .hamburger__line:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger--active .hamburger__line:nth-child(3) {
-    transform: translateY(0) rotate(-45deg);
   }
 
   .character-avatar {

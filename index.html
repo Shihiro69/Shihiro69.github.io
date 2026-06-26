@@ -53,7 +53,7 @@
   </a>
 
   <!-- ==================================================================
-      NAVIGATION
+      NAVIGATION — Backpack Inventory Style
   ================================================================== -->
   <header>
     <nav class="nav container" aria-label="Main navigation">
@@ -62,22 +62,53 @@
           <span class="brand__accent">✦</span> Hasbi<span class="brand__accent">.</span>
         </a>
 
-        <ul class="nav__menu" role="menubar">
+        <ul class="nav__menu backpack" role="menubar" aria-label="Backpack navigation" id="backpack-menu">
           <li role="none">
-            <a href="#hero" class="nav__link nav__link--active" role="menuitem">Home</a>
+            <a href="#hero" class="nav__link nav__link--active backpack__slot" role="menuitem" data-icon="🏠">
+              <span class="backpack__icon" aria-hidden="true">🏠</span>
+              <span class="backpack__label">Home</span>
+            </a>
           </li>
           <li role="none">
-            <a href="#about" class="nav__link" role="menuitem">About</a>
+            <a href="#about" class="nav__link backpack__slot" role="menuitem" data-icon="📖">
+              <span class="backpack__icon" aria-hidden="true">📖</span>
+              <span class="backpack__label">About</span>
+            </a>
           </li>
           <li role="none">
-            <a href="#projects" class="nav__link" role="menuitem">Quests</a>
+            <a href="#skills" class="nav__link backpack__slot" role="menuitem" data-icon="⚔️">
+              <span class="backpack__icon" aria-hidden="true">⚔️</span>
+              <span class="backpack__label">Skills</span>
+            </a>
           </li>
           <li role="none">
-            <a href="#contact" class="nav__link" role="menuitem">Contact</a>
+            <a href="#projects" class="nav__link backpack__slot" role="menuitem" data-icon="🏆">
+              <span class="backpack__icon" aria-hidden="true">🏆</span>
+              <span class="backpack__label">Projects</span>
+            </a>
+          </li>
+          <li role="none">
+            <a href="#experience" class="nav__link backpack__slot" role="menuitem" data-icon="🗺️">
+              <span class="backpack__icon" aria-hidden="true">🗺️</span>
+              <span class="backpack__label">Experience</span>
+            </a>
+          </li>
+          <li role="none">
+            <a href="#achievements" class="nav__link backpack__slot" role="menuitem" data-icon="🌟">
+              <span class="backpack__icon" aria-hidden="true">🌟</span>
+              <span class="backpack__label">Achievements</span>
+            </a>
+          </li>
+          <li role="none">
+            <a href="#contact" class="nav__link backpack__slot" role="menuitem" data-icon="📬">
+              <span class="backpack__icon" aria-hidden="true">📬</span>
+              <span class="backpack__label">Contact</span>
+            </a>
           </li>
         </ul>
 
-        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false"
+          aria-controls="backpack-menu">
           <span class="hamburger__line"></span>
           <span class="hamburger__line"></span>
           <span class="hamburger__line"></span>
@@ -98,7 +129,7 @@
 
           <div class="hero__content">
             <span class="badge badge--accent animate-fade-in-down delay-100">
-              🗺️ Level 5 Explorer
+              🗺️ Level 22 Explorer
             </span>
 
             <h1 class="animate-fade-in-left delay-200" style="margin-top: var(--space-6);">
@@ -106,7 +137,7 @@
             </h1>
 
             <p class="tagline animate-fade-in-left delay-300">
-              A front-end adventurer on a quest to craft immersive digital experiences.
+              A adventurer on a quest to craft immersive digital experiences.
               Every project is a new dungeon, every bug a monster to slay.
             </p>
 
@@ -200,6 +231,68 @@
       </div>
     </section>
 
+    <!-- ── SKILLS ────────────────────────────────────────────────────── -->
+    <section id="skills" class="section" aria-label="Skills & tools">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">⚔️ Arsenal</span>
+          <h2 class="section__title">Toolbelt & <span class="text-gradient">Weaponry</span></h2>
+          <p class="section__subtitle">
+            Every adventurer needs the right gear. Here's what I wield in battle.
+          </p>
+        </div>
+
+        <div class="skills-grid" style="margin-top: var(--space-8);">
+          <!-- Frontend -->
+          <div class="skill-category glass-card reveal delay-100">
+            <h3 class="skill-category__title">🎨 Frontend</h3>
+            <div class="skill-category__tags">
+              <span class="skill-pill skill-pill--mastered">HTML5</span>
+              <span class="skill-pill skill-pill--mastered">CSS3</span>
+              <span class="skill-pill skill-pill--mastered">JavaScript</span>
+              <span class="skill-pill skill-pill--adept">React</span>
+              <span class="skill-pill skill-pill--adept">Tailwind</span>
+              <span class="skill-pill skill-pill--adept">TypeScript</span>
+            </div>
+          </div>
+
+          <!-- Design -->
+          <div class="skill-category glass-card reveal delay-200">
+            <h3 class="skill-category__title">✏️ Design</h3>
+            <div class="skill-category__tags">
+              <span class="skill-pill skill-pill--mastered">Figma</span>
+              <span class="skill-pill skill-pill--adept">Adobe XD</span>
+              <span class="skill-pill skill-pill--adept">Illustrator</span>
+              <span class="skill-pill skill-pill--novice">Blender</span>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-category glass-card reveal delay-300">
+            <h3 class="skill-category__title">🔧 Tools</h3>
+            <div class="skill-category__tags">
+              <span class="skill-pill skill-pill--mastered">Git</span>
+              <span class="skill-pill skill-pill--mastered">VS Code</span>
+              <span class="skill-pill skill-pill--adept">Webpack</span>
+              <span class="skill-pill skill-pill--adept">Vite</span>
+              <span class="skill-pill skill-pill--novice">Docker</span>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="skill-category glass-card reveal delay-400">
+            <h3 class="skill-category__title">🧠 Soft Skills</h3>
+            <div class="skill-category__tags">
+              <span class="skill-pill skill-pill--mastered">Teamwork</span>
+              <span class="skill-pill skill-pill--mastered">Problem Solving</span>
+              <span class="skill-pill skill-pill--adept">Leadership</span>
+              <span class="skill-pill skill-pill--adept">Public Speaking</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ── PROJECTS ──────────────────────────────────────────────────── -->
     <section id="projects" class="section" aria-label="Projects — Quests completed">
       <div class="container">
@@ -213,6 +306,127 @@
 
         <div id="project-grid" class="card-grid" style="margin-top: var(--space-8);">
           <!-- Dynamically rendered by world.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXPERIENCE ────────────────────────────────────────────────── -->
+    <section id="experience" class="section" aria-label="Experience — Journey log">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">🗺️ Journey Log</span>
+          <h2 class="section__title">Realms <span class="text-gradient">Conquered</span></h2>
+          <p class="section__subtitle">
+            From solo dungeons to guild wars — every adventure shaped the warrior I am today.
+          </p>
+        </div>
+
+        <div class="experience-timeline" style="margin-top: var(--space-8);">
+
+          <article class="exp-card glass-card reveal delay-100">
+            <div class="exp-card__meta">
+              <span class="badge badge--accent">2024 — Present</span>
+              <span class="exp-card__role">Senior Front-End Developer</span>
+            </div>
+            <h3 class="exp-card__title">TechCorp Studio — Guild Leader</h3>
+            <p class="exp-card__desc">
+              Led a party of 5 developers through treacherous sprints. Architected a component library used across 12
+              realms (projects).
+            </p>
+            <div class="flex flex--wrap" style="gap: var(--space-2);">
+              <span class="skill-pill">React</span>
+              <span class="skill-pill">TypeScript</span>
+              <span class="skill-pill">Storybook</span>
+            </div>
+          </article>
+
+          <article class="exp-card glass-card reveal delay-200">
+            <div class="exp-card__meta">
+              <span class="badge badge--accent">2022 — 2024</span>
+              <span class="exp-card__role">Front-End Developer</span>
+            </div>
+            <h3 class="exp-card__title">PixelForge Inc. — Dungeon Explorer</h3>
+            <p class="exp-card__desc">
+              Solo'd multiple high-stakes projects from wireframe to deployment. Mastered the art of pixel-perfect
+              combat against cross-browser bugs.
+            </p>
+            <div class="flex flex--wrap" style="gap: var(--space-2);">
+              <span class="skill-pill">Vue</span>
+              <span class="skill-pill">Sass</span>
+              <span class="skill-pill">Webpack</span>
+            </div>
+          </article>
+
+          <article class="exp-card glass-card reveal delay-300">
+            <div class="exp-card__meta">
+              <span class="badge badge--accent">2021 — 2022</span>
+              <span class="exp-card__role">Junior Developer</span>
+            </div>
+            <h3 class="exp-card__title">StartupForge — Apprentice Adventurer</h3>
+            <p class="exp-card__desc">
+              Sharpened my blade on real-world codebases. Learned the ancient arts of Git, code review, and agile
+              questing.
+            </p>
+            <div class="flex flex--wrap" style="gap: var(--space-2);">
+              <span class="skill-pill">HTML</span>
+              <span class="skill-pill">CSS</span>
+              <span class="skill-pill">JavaScript</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ACHIEVEMENTS ──────────────────────────────────────────────── -->
+    <section id="achievements" class="section" aria-label="Achievements — Medals earned">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">🌟 Medals of Honour</span>
+          <h2 class="section__title">Epic <span class="text-gradient">Achievements</span></h2>
+          <p class="section__subtitle">
+            Trophies earned through blood, sweat, and clean code.
+          </p>
+        </div>
+
+        <div class="achievements-grid" style="margin-top: var(--space-8);">
+
+          <div class="achievement-card reveal delay-100">
+            <div class="achievement-card__icon">🏅</div>
+            <div class="achievement-card__info">
+              <h3 class="achievement-card__title">Hackathon Champion</h3>
+              <p class="achievement-card__desc">1st place at DevFest 2024</p>
+            </div>
+            <span class="badge badge--accent">2024</span>
+          </div>
+
+          <div class="achievement-card reveal delay-200">
+            <div class="achievement-card__icon">📜</div>
+            <div class="achievement-card__info">
+              <h3 class="achievement-card__title">Open Source Contributor</h3>
+              <p class="achievement-card__desc">500+ commits across 10 repos</p>
+            </div>
+            <span class="badge badge--accent">2023</span>
+          </div>
+
+          <div class="achievement-card reveal delay-300">
+            <div class="achievement-card__icon">🎓</div>
+            <div class="achievement-card__info">
+              <h3 class="achievement-card__title">Google UX Certificate</h3>
+              <p class="achievement-card__desc">Professional certification completed</p>
+            </div>
+            <span class="badge badge--accent">2023</span>
+          </div>
+
+          <div class="achievement-card reveal delay-400">
+            <div class="achievement-card__icon">⚡</div>
+            <div class="achievement-card__info">
+              <h3 class="achievement-card__title">Performance Optimizer</h3>
+              <p class="achievement-card__desc">Shaved 3s off Lighthouse load time</p>
+            </div>
+            <span class="badge badge--accent">2024</span>
+          </div>
+
         </div>
       </div>
     </section>
@@ -233,21 +447,17 @@
             <div>
               <label for="contact-name" class="sr-only">Your name</label>
               <input type="text" id="contact-name" name="name" placeholder="Your name" required
-                style="width: 100%; padding: var(--space-3) var(--space-4); background: var(--clr-bg-tertiary); border: 1px solid var(--clr-border); border-radius: var(--radius-md); color: var(--clr-text-primary); font-size: var(--text-base); transition: border-color var(--transition-fast);"
-                onfocus="this.style.borderColor='var(--clr-accent-primary)'" onblur="this.style.borderColor=''">
+                style="width: 100%; padding: var(--space-3) var(--space-4); background: var(--clr-bg-tertiary); border: 1px solid var(--clr-border); border-radius: var(--radius-md); color: var(--clr-text-primary); font-size: var(--text-base); transition: border-color var(--transition-fast);">
             </div>
             <div>
               <label for="contact-email" class="sr-only">Your email</label>
               <input type="email" id="contact-email" name="email" placeholder="Your email" required
-                style="width: 100%; padding: var(--space-3) var(--space-4); background: var(--clr-bg-tertiary); border: 1px solid var(--clr-border); border-radius: var(--radius-md); color: var(--clr-text-primary); font-size: var(--text-base); transition: border-color var(--transition-fast);"
-                onfocus="this.style.borderColor='var(--clr-accent-primary)'" onblur="this.style.borderColor=''">
+                style="width: 100%; padding: var(--space-3) var(--space-4); background: var(--clr-bg-tertiary); border: 1px solid var(--clr-border); border-radius: var(--radius-md); color: var(--clr-text-primary); font-size: var(--text-base); transition: border-color var(--transition-fast);">
             </div>
             <div>
               <label for="contact-message" class="sr-only">Your message</label>
               <textarea id="contact-message" name="message" rows="5" placeholder="Your message..." required
-                style="width: 100%; padding: var(--space-3) var(--space-4); background: var(--clr-bg-tertiary); border: 1px solid var(--clr-border); border-radius: var(--radius-md); color: var(--clr-text-primary); font-size: var(--text-base); transition: border-color var(--transition-fast); resize: vertical;"
-                onfocus="this.style.borderColor='var(--clr-accent-primary)'"
-                onblur="this.style.borderColor=''"></textarea>
+                style="width: 100%; padding: var(--space-3) var(--space-4); background: var(--clr-bg-tertiary); border: 1px solid var(--clr-border); border-radius: var(--radius-md); color: var(--clr-text-primary); font-size: var(--text-base); transition: border-color var(--transition-fast); resize: vertical;"></textarea>
             </div>
             <button type="submit" class="btn btn--primary" style="align-self: flex-start;">
               🚀 Send Message

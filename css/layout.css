@@ -170,6 +170,47 @@
   gap: var(--space-8);
 }
 
+/* ── Hamburger hidden by default — shown in mobile breakpoint ─────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: var(--z-modal);
+  background: none;
+  border: none;
+  position: relative;
+}
+
+.hamburger__line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--clr-text-primary);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  position: absolute;
+}
+
+.hamburger__line:nth-child(1) { transform: translateY(-6px); }
+.hamburger__line:nth-child(2) { transform: translateY(0); }
+.hamburger__line:nth-child(3) { transform: translateY(6px); }
+
+.hamburger--active .hamburger__line:nth-child(1) {
+  transform: translateY(0) rotate(45deg);
+}
+
+.hamburger--active .hamburger__line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger--active .hamburger__line:nth-child(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+
 /* ── Footer Layout ─────────────────────────────────────────────────────── */
 .footer {
   padding-block: var(--space-12);
