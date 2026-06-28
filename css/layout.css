@@ -172,14 +172,6 @@
   box-shadow: 0 0 8px var(--clr-accent-primary);
 }
 
-@keyframes hero-particle-float {
-  0%   { opacity: 0;   transform: translateY(0) scale(0.5); }
-  15%  { opacity: 0.8; transform: translateY(0) scale(1); }
-  50%  { opacity: 0.6; transform: translateY(-60px) scale(1.2); }
-  85%  { opacity: 0.3; transform: translateY(-100px) scale(0.8); }
-  100% { opacity: 0;   transform: translateY(-140px) scale(0.3); }
-}
-
 /* Hero Container */
 .hero__container {
   position: relative;
@@ -252,26 +244,162 @@
   gap: var(--space-2);
 }
 
-/* ── RIGHT: Character ────────────────────────────────────────────────────── */
-.hero__visual {
+/* ── LEFT: 3D Flip Card (Character + Photo) ───────────────────────────── */
+
+.hero__flip-card {
+  perspective: 1000px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  outline: none;
+  animation: hero-card-float 5s ease-in-out infinite;
+  justify-self: center;
+  display: inline-grid;
+}
+
+/* Stop float while flipped */
+.hero__flip-card--flipped {
+  animation: none;
+}
+
+.hero__flip-card:focus-visible {
+  outline: 2px solid var(--clr-accent-primary);
+  outline-offset: 6px;
+  border-radius: var(--radius-xl);
+}
+
+.hero__flip-inner {
+  display: grid;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero__flip-card--flipped .hero__flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Both faces — stacked in same grid cell */
+.hero__flip-front,
+.hero__flip-back {
+  grid-area: 1 / 1;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ── FRONT: Sprite Face — identical to live character ─────────────────── */
+.hero__flip-front {
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
   gap: 0;
+}
+
+/* Character sprite sizing — prevent native PNG from being huge */
+.hero__flip-front .character-avatar {
+  width: 220px;
+  height: 280px;
+}
+
+.hero__flip-front .character-avatar img,
+.hero__flip-front .character-sprite {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
 }
 
 /* Character ground glow */
 .hero__character-shadow {
   width: 180px;
   height: 24px;
-  margin-top: -8px;
-  background: radial-gradient(ellipse at center, rgba(244, 140, 6, 0.35) 0%, transparent 70%);
+  margin-top: -4px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(244, 140, 6, 0.35) 0%,
+    transparent 70%
+  );
   border-radius: 50%;
+  animation: pulse-glow 3s ease-in-out infinite;
 }
 
-/* ── Card Layout ────────────────────────────────────────────────────────── */
+/* ── BACK: Photo Face ─────────────────────────────────────────────────── */
+.hero__flip-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(
+    160deg,
+    rgba(15, 8, 30, 0.95),
+    rgba(20, 12, 40, 0.95)
+  );
+  border: 2px solid rgba(244, 140, 6, 0.25);
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+  animation: back-pulse-border 3s ease-in-out infinite;
+}
+
+/* Spinning decorative rings */
+.hero__back-ring {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 1px solid rgba(244, 140, 6, 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: back-ring-spin 12s linear infinite;
+  pointer-events: none;
+}
+
+.hero__back-ring--inner {
+  width: 200px;
+  height: 200px;
+  border-color: rgba(244, 140, 6, 0.15);
+  border-style: dashed;
+  animation-direction: reverse;
+  animation-duration: 9s;
+}
+
+/* Floating particle container */
+.hero__back-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero__back-particle {
+  position: absolute;
+  left: var(--bx);
+  top: var(--by);
+  width: var(--bs);
+  height: var(--bs);
+  background: var(--clr-accent-primary);
+  border-radius: 50%;
+  opacity: 0;
+  animation: back-particle-drift 4s ease-in-out infinite;
+  animation-delay: var(--bd);
+  box-shadow: 0 0 6px var(--clr-accent-primary), 0 0 12px rgba(244, 140, 6, 0.4);
+}
+
+.hero__back-particle:nth-child(even) {
+  animation-name: back-particle-drift-2;
+}
+
+.hero__flip-back .hero__photo-img {
+  position: absolute;
+  inset: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  object-fit: cover;
+  border: none;
+  border-radius: calc(var(--radius-xl) - 4px);
+  z-index: 1;
+}
+
+/* Card Layout */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

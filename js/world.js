@@ -3,7 +3,7 @@
    "Hasbi's Adventure Journal"
    ========================================================================== */
 
-import { createElement, fetchJSON, isInViewport } from './utilities.js';
+import { createElement, fetchJSON } from './utilities.js';
 
 /**
  * @class World

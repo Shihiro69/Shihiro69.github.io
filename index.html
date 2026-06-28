@@ -142,10 +142,30 @@
       <div class="container hero__container">
         <div class="hero">
 
-          <!-- LEFT: Character Visual -->
-          <div class="hero__visual animate-scale-in delay-300">
-            <div id="character-avatar"></div>
-            <div class="hero__character-shadow" aria-hidden="true"></div>
+          <!-- LEFT: Character Visual — 3D Flip Card -->
+          <div class="hero__flip-card animate-scale-in delay-300" id="hero-flip-card" role="button" tabindex="0" aria-label="Flip to see photo">
+            <div class="hero__flip-inner">
+              <!-- FRONT: Animated Sprite -->
+              <div class="hero__flip-front">
+                <div id="character-avatar"></div>
+                <div class="hero__character-shadow" aria-hidden="true"></div>
+              </div>
+              <!-- BACK: Profile Photo -->
+              <div class="hero__flip-back">
+                <div class="hero__back-ring" aria-hidden="true"></div>
+                <div class="hero__back-ring hero__back-ring--inner" aria-hidden="true"></div>
+                <div class="hero__back-particles" aria-hidden="true">
+                  <span class="hero__back-particle" style="--bx:30%;--by:70%;--bd:0s;--bs:3px;"></span>
+                  <span class="hero__back-particle" style="--bx:60%;--by:20%;--bd:1.5s;--bs:2px;"></span>
+                  <span class="hero__back-particle" style="--bx:80%;--by:50%;--bd:3s;--bs:4px;"></span>
+                  <span class="hero__back-particle" style="--bx:15%;--by:30%;--bd:2s;--bs:2px;"></span>
+                  <span class="hero__back-particle" style="--bx:70%;--by:80%;--bd:0.5s;--bs:3px;"></span>
+                  <span class="hero__back-particle" style="--bx:45%;--by:10%;--bd:2.5s;--bs:2px;"></span>
+                  <span class="hero__back-particle" style="--bx:90%;--by:60%;--bd:1s;--bs:5px;"></span>
+                </div>
+                <img src="assets/profile/fotogueh.jpg" alt="Muhammad Adryan Hasbi" class="hero__photo-img" loading="lazy">
+              </div>
+            </div>
           </div>
 
           <!-- RIGHT: Content Panel -->

@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   hero.render();
 
+  /* 3D Flip Card */
+  setupFlipCard();
+
   /* World (projects) */
   const world = new World({ dataPath: './data/projects.json' });
   await world.init();
@@ -31,3 +34,19 @@ document.addEventListener('DOMContentLoaded', async () => {
   const yearSpan = document.getElementById('current-year');
   if (yearSpan) yearSpan.textContent = currentYear();
 });
+
+/** Toggle 3D flip on the hero character card */
+function setupFlipCard() {
+  const card = document.getElementById('hero-flip-card');
+  if (!card) return;
+
+  const toggle = () => card.classList.toggle('hero__flip-card--flipped');
+
+  card.addEventListener('click', toggle);
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggle();
+    }
+  });
+}

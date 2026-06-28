@@ -28,7 +28,7 @@
     font-size: var(--text-lg);
   }
 
-  .hero__visual .character-avatar {
+  .hero__flip-front .character-avatar {
     width: 220px;
     height: 270px;
   }
@@ -103,13 +103,12 @@
     justify-content: center;
   }
 
-  .hero__visual {
+  .hero__flip-card {
     order: 0;
-    display: flex;
-    justify-content: center;
+    justify-self: center;
   }
 
-  .hero__visual .character-avatar {
+  .hero__flip-front .character-avatar {
     width: 180px;
     height: 230px;
   }
@@ -174,7 +173,7 @@
     display: flex !important;
   }
 
-  .character-avatar {
+  .hero__flip-front .character-avatar {
     width: 160px;
     height: 160px;
   }
@@ -237,13 +236,13 @@
     gap: 0;
   }
 
-  /* Hero World — character stays visually centered */
-  .hero__visual {
-    justify-content: center;
-    align-items: center;
+  /* Hero World — flip card stays visually centered in its column */
+  .hero__flip-card {
+    justify-self: center;
   }
 
-  .hero__visual .character-avatar {
+  /* Keep character sprite sized like live site */
+  .hero__flip-front .character-avatar {
     width: 250px;
     height: 310px;
   }
@@ -253,11 +252,6 @@
     max-width: none;
     padding-right: 0;
     padding-left: 0;
-  }
-
-  /* Hero World column gets its own padding so character doesn't stick to left */
-  .hero__visual {
-    padding-left: var(--container-padding);
   }
 
   /* Information Panel — extends from hero world to right viewport edge.
