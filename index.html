@@ -124,45 +124,66 @@
 
     <!-- ── HERO ──────────────────────────────────────────────────────── -->
     <section id="hero" class="section section--hero" aria-label="Hero introduction">
-      <div class="container">
+      <!-- Background Layer -->
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <!-- Particles Layer (animate floating lights) -->
+      <div class="hero__particles" aria-hidden="true">
+        <span class="hero-particle" style="--x:10%;--y:20%;--delay:0s;--size:3px;"></span>
+        <span class="hero-particle" style="--x:25%;--y:60%;--delay:1.2s;--size:2px;"></span>
+        <span class="hero-particle" style="--x:45%;--y:15%;--delay:2.4s;--size:4px;"></span>
+        <span class="hero-particle" style="--x:70%;--y:40%;--delay:0.8s;--size:2px;"></span>
+        <span class="hero-particle" style="--x:85%;--y:75%;--delay:3.2s;--size:3px;"></span>
+        <span class="hero-particle" style="--x:60%;--y:80%;--delay:1.8s;--size:2px;"></span>
+        <span class="hero-particle" style="--x:15%;--y:85%;--delay:2.8s;--size:4px;"></span>
+      </div>
+
+      <div class="container hero__container">
         <div class="hero">
 
+          <!-- LEFT: Character Visual -->
+          <div class="hero__visual animate-scale-in delay-300">
+            <div id="character-avatar"></div>
+            <div class="hero__character-shadow" aria-hidden="true"></div>
+          </div>
+
+          <!-- RIGHT: Content Panel -->
           <div class="hero__content">
             <span class="badge badge--accent animate-fade-in-down delay-100">
               🗺️ Level 22 Explorer
             </span>
 
-            <h1 class="animate-fade-in-left delay-200" style="margin-top: var(--space-6);">
-              Hi, I'm <span class="text-gradient">Muhammad Adryan Hasbi</span>
+            <h1 class="hero__name animate-fade-in-left delay-200">
+              Muhammad Adryan <span class="text-gradient">Hasbi</span>
             </h1>
 
-            <p class="tagline animate-fade-in-left delay-300">
-              A adventurer on a quest to craft immersive digital experiences.
+            <p class="hero__title animate-fade-in-left delay-250">
+              Front-End Developer &amp; UI Engineer
+            </p>
+
+            <p class="hero__desc animate-fade-in-left delay-300">
+              An adventurer on a quest to craft immersive digital experiences.
               Every project is a new dungeon, every bug a monster to slay.
             </p>
 
-            <div class="flex" style="gap: var(--space-4); margin-top: var(--space-8); flex-wrap: wrap;">
-              <a href="#projects" class="btn btn--primary animate-fade-in-up delay-400">
+            <div class="hero__actions animate-fade-in-up delay-400">
+              <a href="#projects" class="btn btn--primary">
                 ⚔️ View Quests
               </a>
-              <a href="#contact" class="btn btn--secondary animate-fade-in-up delay-500">
+              <a href="#contact" class="btn btn--secondary">
                 📬 Contact Me
               </a>
             </div>
 
-            <!-- Skills -->
-            <div class="flex flex--wrap" style="gap: var(--space-2); margin-top: var(--space-10);">
+            <!-- Skill Pills -->
+            <div class="hero__skills animate-fade-in-up delay-500">
               <span class="skill-pill">HTML5</span>
               <span class="skill-pill">CSS3</span>
               <span class="skill-pill">JavaScript</span>
               <span class="skill-pill">React</span>
               <span class="skill-pill">Figma</span>
             </div>
-          </div>
-
-          <!-- Character Avatar -->
-          <div class="hero__visual animate-scale-in delay-300">
-            <div id="character-avatar" class="flex flex--col" style="align-items: center; gap: var(--space-6);"></div>
           </div>
 
         </div>
