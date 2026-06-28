@@ -93,9 +93,9 @@ export class World {
       body.appendChild(tagWrap);
     }
 
-    if (project.url || project.github) {
+    if (project.url !== '#' || project.github !== '#') {
       const links = createElement('div', { className: 'flex', style: 'gap: var(--space-3);' });
-      if (project.url) {
+      if (project.url && project.url !== '#') {
         links.appendChild(createElement('a', {
           className: 'btn btn--primary',
           href: project.url,
@@ -104,7 +104,7 @@ export class World {
           html: '🔗 Live Demo',
         }));
       }
-      if (project.github) {
+      if (project.github && project.github !== '#') {
         links.appendChild(createElement('a', {
           className: 'btn btn--secondary',
           href: project.github,
@@ -113,7 +113,9 @@ export class World {
           html: '📂 Source',
         }));
       }
-      body.appendChild(links);
+      if (links.children.length > 0) {
+        body.appendChild(links);
+      }
     }
 
     card.appendChild(banner);
